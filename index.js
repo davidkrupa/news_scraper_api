@@ -43,17 +43,19 @@ app.get("/football", (req, res) => {
 app.get("/football/:clubId", async (req, res) => {
   const clubId = req.params.clubId;
 
-  const formattedClubId =
-    clubId.charAt(0).toLocaleUpperCase + clubId.slice(1).toLocaleLowerCase();
+  const formattedClubId = clubId
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
 
   axios
-    .get(formattedClubId)
+    .get("https://www.bbc.com/sport/football")
     .then((response) => {
       const html = response.data;
       const $ = cheerio.load(html);
       const clubNews = [];
 
-      const clubQuery = 'a:contains("Chelsea")';
+      const clubQuery = `a:contains(${formattedClubId})`;
 
       $(clubQuery, html).each(function () {
         const title = $(this).text();
