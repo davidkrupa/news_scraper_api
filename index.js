@@ -34,7 +34,7 @@ const pages = [
 ];
 
 app.get("/", (req, res) => {
-  res.json("Welcome to my Premier League News API");
+  res.json("Welcome to my Premier League News API - endpoints: /clubName");
 });
 
 app.get("/:clubId", async (req, res) => {
