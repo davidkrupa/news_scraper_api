@@ -15,18 +15,39 @@ To run this project locally, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/premier-league-news-api.git
+   git clone https://github.com/davidkrupa/premier-league-news-api.git
+   ```
+   ```bash
    cd premier-league-news-api
+   ```
 
 2. Install dependencies:
    
    ```bash
    npm install
-   
+   ```
 
-4. Start the server:
+3. Start the server:
    
    ```bash
    npm start
+   ```
    
-   
+## Usage
+
+1. Fetch News by Club Name: <br />
+Access the club-specific news by providing the club name as a parameter (e.g., "liverpool"):
+
+   ```bash
+   http://localhost:8000/manchester%20united
+   ```
+
+2. Response Format: <br />
+The API responds with a JSON array containing news articles for the specified club. Each article includes the following information:
+
+- title: The title of the news article.
+- url: The URL to the full article.
+- source: The source of the news article.
+
+## Disclaimer
+This project is for educational and non-commercial purposes only. It scrapes content from external websites, so use it responsibly and be aware of the terms and conditions of those websites.
