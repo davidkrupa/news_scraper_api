@@ -39,7 +39,7 @@ To run this project locally, follow these steps:
 Access the club-specific news by providing the club name as a parameter (e.g., "liverpool"):
 
    ```bash
-   http://localhost:8000/manchester%20united
+   http://localhost:8000/liverpool
    ```
 
 2. Response Format: <br />
